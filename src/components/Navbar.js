@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export class Navbar extends Component {
@@ -8,10 +8,12 @@ export class Navbar extends Component {
         right: '0px',
         // height: '40px',
         width: '58px',
-        border: '3px solid',
+        // border: '3px solid black',
         borderRadius: '50px',
         fontSize: "1.5rem",
-        paddingBotom:"20px"        
+        paddingBotom: "20px",
+        zIndex: 9999,
+        aspectRatio: 1
     }
     render() {
         return (
@@ -53,9 +55,9 @@ export class Navbar extends Component {
                         </div>
                     </div>
                 </nav>
-                <button className='btn btn-lg btn-outline-dark mx-3 mb-4' style={this.mystyle} onClick={() => {
-          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-        }}>&uarr;</button>
+                <button className='btn btn-lg btn-dark mx-3 mb-4' style={this.mystyle} onClick={() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                }}>&uarr;</button>
             </>
         )
     }
