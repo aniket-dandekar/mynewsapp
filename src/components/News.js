@@ -35,7 +35,7 @@ export class News extends Component {
 
     fetchNewsArticles = async (tPage) => {
         this.props.cProgress(10);
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${tPage}&pageSize=${this.props.totArticls}`;
+        let url = `https://my-new-app-ten-xi.vercel.app/api/news?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${tPage}&pageSize=${this.props.totArticls}`;
         this.props.cProgress(30);
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -53,7 +53,7 @@ export class News extends Component {
     }
 
     fetchMoreData = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page + 1}&pageSize=${this.props.totArticls}`;
+        let url = `https://my-new-app-ten-xi.vercel.app/api/news?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apikey}&page=${this.state.page + 1}&pageSize=${this.props.totArticls}`;
         let data = await fetch(url);
         let parsedData = await data.json();
         this.setState({
