@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 
 export class NewsItem extends Component {
     render() {
+        // let stg = 'abcd'
+        // stg.slice()
         let { title, desc, imageUrl, url, source, author, pubDate } = this.props;
+        desc = desc.slice(0,150)
+
         if (imageUrl && imageUrl.charAt(imageUrl.length - 1) === '/') {
             // console.log( imageUrl.charAt(imageUrl.length - 1))
             imageUrl = imageUrl.slice(0, imageUrl.length - 1)
@@ -17,7 +21,7 @@ export class NewsItem extends Component {
                         <div className="d-flex flex-row-reverse">
                             <small style={{ fontSize: "0.6rem" }} className="text-muted">Publised on {new Date(pubDate).toGMTString()}, by {author ? author : "unknown"}</small>
                         </div>
-                        <p className="card-text">{desc}</p>
+                        <p className="card-text">{desc}...</p>
 
                         <a href={url} rel="noreferrer" target="_blank" className="btn btn-sm btn-dark">Read more...</a>
                     </div>
